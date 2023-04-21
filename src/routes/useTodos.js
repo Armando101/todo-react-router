@@ -59,6 +59,11 @@ function useTodos() {
     saveTodos(newTodos);
   };
 
+  const getTodo = (id) => {
+    const todoIndex = todos.findIndex((todo) => todo.id === id);
+    return todos[todoIndex];
+  };
+
   const state = {
     loading,
     error,
@@ -75,6 +80,7 @@ function useTodos() {
     editTodo,
     deleteTodo,
     sincronizeTodos,
+    getTodo,
   };
 
   return { state, stateUpdaters };
